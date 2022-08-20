@@ -7,7 +7,7 @@ with open('requirements.txt', 'r') as f:
     requirements = f.read().split('\n')
 
 setuptools.setup(
-    name='sqlalchemy_utils',
+    name='sqlalchemy-utils',
     version='0.0.1',
     author='Tom Antonov',
     author_email='artyom.antnv@gmail.com',
