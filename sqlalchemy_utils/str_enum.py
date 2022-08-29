@@ -4,8 +4,8 @@ from sqlalchemy import TypeDecorator, String
 class StrEnum(TypeDecorator):
     impl = String
 
-    def __init__(self, enumtype, len: int, *args, **kwargs):
-        super().__init__(len=len, *args, **kwargs)
+    def __init__(self, enumtype, length: int, *args, **kwargs):
+        super().__init__(length=length, *args, **kwargs)
         self._enumtype = enumtype
 
     def process_bind_param(self, value, dialect):
