@@ -2,10 +2,12 @@ from sqlalchemy import TypeDecorator, String
 
 
 class StrEnum(TypeDecorator):
+    impl = String
+
     def __init__(self, enumtype, str_max_len: int, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._enumtype = enumtype
-        self.impl = String(length=str_max_len)
+        self.impl = self.impl(len=str_max_len)
 
     def process_bind_param(self, value, dialect):
         if value:
