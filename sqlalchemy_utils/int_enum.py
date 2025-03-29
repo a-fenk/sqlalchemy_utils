@@ -3,6 +3,7 @@ from sqlalchemy import TypeDecorator, Integer
 
 class IntEnum(TypeDecorator):
     impl = Integer
+    cache_ok = True
 
     def __init__(self, enumtype, *args, **kwargs):
         super().__init__(*args, **kwargs)
